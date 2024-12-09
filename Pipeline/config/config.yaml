@@ -1,0 +1,24 @@
+#config.yaml for realign_bam_paired.snakefile
+#Anna Hoge
+#Template made October 18th, 2019
+#Ha Lab
+#Fred Hutchinson Cancer Research Center
+#modified by Anna_Lisa Doebley (AL) 2020_02_03
+
+
+#SELECT CORRECT REFERENCE GENOME
+#reference genome for alignment, with index files in same folder as .fa file
+ref:
+    /path/to/host/fasta.fa
+
+java: /app/software/Java/1.8.0_181/bin/java
+gatk: /app/software/GATK/4.1.3.0-GCCcore-8.3.0-Java-1.8
+gatk_jar: /app/software/GATK/4.1.3.0-GCCcore-8.3.0-Java-1.8/gatk-package-4.1.3.0-local.jar
+picard_jar: $EBROOTPICARD/picard.jar
+
+kmer_file: /path/to/host.hss
+min_clipped_read_length: 70
+microbe_fasta: /path/to/microbe.fa
+microbe_bwa_image: /path/to/microbe.img
+taxonomy_file: /path/to/microbe.db
+filter_bwa_image: /path/to/host.fa.img

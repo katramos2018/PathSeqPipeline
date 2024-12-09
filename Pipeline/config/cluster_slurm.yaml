@@ -1,0 +1,32 @@
+#cluster_slurm.yaml for realign_bam_paired.snakefile
+#Anna Hoge
+#Template made October 18th, 2019
+#Ha Lab
+#Fred Hutchinson Cancer Research Center
+#modified by Anna-Lisa Doebley 2020-02-03
+
+__default__:
+    partition: campus-new
+    time: "24:0:0"
+    mem: 100G
+    ncpus: 5
+    ntasks: 1
+    output: logs/cluster/{rule}.{wildcards.samples}.%A.out
+    JobName: "{rule}.{wildcards.samples}.%A"
+
+unalign:
+    partition: campus-new
+    mem: 100G
+    ncpus: 5
+    time: "96:0:0"
+
+pathseq:
+    time: "96:0:0"
+    mem: 100G
+    ncpus: 5
+
+
+
+#get_alignment_metrics:
+
+#get_wgs_metrics:
